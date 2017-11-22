@@ -1,5 +1,5 @@
 (function ($) {
-    var MaterialCard = function (element, options) {
+    let MaterialCard = function (element, options) {
         this.options        = options;
         this.card           = $(element);
         this.button         = $(element).children('.mc-btn-action');
@@ -7,7 +7,7 @@
         this.card_activator = options.card_activator;
         this.timing         = this.getTransitionTiming();
 
-        var that = this;
+        let that = this;
 
         if (that.card_activator == 'click') {
             if (!this.icon.hasClass(this.options.icon_open)) {
@@ -44,7 +44,7 @@
     };
 
     MaterialCard.prototype.getTransitionTiming = function () {
-        var duration = 0;
+        let duration = 0;
         this.card.find('*').each(function () {
             if ( (transitionDurationToMilliseconds($(this).css('transition-duration')) + transitionDurationToMilliseconds($(this).css('transition-delay'))) > duration) {
                 duration = (transitionDurationToMilliseconds($(this).css('transition-duration')) + transitionDurationToMilliseconds($(this).css('transition-delay')));
@@ -54,7 +54,7 @@
     };
 
     MaterialCard.prototype.close = function () {
-        var that = this;
+        let that = this;
         this.card.trigger('hide.material-card');
         this.card.removeClass('mc-active');
         window.setTimeout(function() {
@@ -68,7 +68,7 @@
     };
 
     MaterialCard.prototype.open = function () {
-        var that = this;
+        let that = this;
         this.card.trigger('show.material-card');
         this.card.addClass('mc-active');
 
@@ -87,7 +87,7 @@
     };
 
     let transitionDurationToMilliseconds = function(duration) {
-        var pieces = duration.match(/^([\d\.]+)(\w+)$/),
+        let pieces = duration.match(/^([\d\.]+)(\w+)$/),
             time, unit, multiplier;
 
         if (pieces.length <= 1) {
@@ -104,11 +104,11 @@
         return time * multiplier;
     };
 
-    var Plugin = function (options) {
+    let Plugin = function (options) {
         return this.each(function () {
-            var $this    = $(this);
-            var $MCData    = $this.data('material-card');
-            var $options = $.extend({}, MaterialCard.defaults, typeof options == 'object' && options);
+            let $this    = $(this);
+            let $MCData    = $this.data('material-card');
+            let $options = $.extend({}, MaterialCard.defaults, typeof options == 'object' && options);
 
             if (!$MCData) {
                 $this.data('material-card', ($MCData = new MaterialCard(this, $options)));
