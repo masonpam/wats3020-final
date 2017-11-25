@@ -1,7 +1,7 @@
 let beerNames = ["IIPA", "Lager", "Porter", "Red Ale", "Stout", "Cider"];
 document.getElementById("material-card");
-$(function() {
-        $('.material-card > .mc-btn-action').click(function () {
+(function() {
+        ('.material-card > .mc-btn-action').click(function () {
             var card = $(this).parent('.material-card');
             var icon = $(this).children('i');
             icon.addClass('fa-spin-fast');
