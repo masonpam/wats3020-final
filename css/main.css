@@ -80,6 +80,11 @@
   left: 16px;
   transition: all 0.3s;
 }
+a.mc-btn-action {
+  useCapture: true;
+  passive: false;
+  once: false;
+}
 .material-card .mc-btn-action {
   position: absolute;
   right: 16px;
