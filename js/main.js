@@ -90,20 +90,5 @@ document.getElementById("material-card");
         return this.card.hasClass('mc-active');
     };
 
-    let transitionDurationToMilliseconds = function(duration) {
-        let pieces = duration.match(/^([\d\.]+)(\w+)$/),
-            time, unit, multiplier;
-
-        if (pieces.length <= 1) {
-            return duration;
-        }
-        time = pieces[1];
-        unit = pieces[2];
-        switch(unit) {
-            case 'ms': multiplier = 1;
-                break;
-            case 's': multiplier = 1000;
-                break;
-        }
-        return time * multiplier;
-    };
+  
+    });
