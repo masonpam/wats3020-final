@@ -1,7 +1,9 @@
+//Start of beer cards//
 let beerNames = ["IIPA", "Lager", "Porter", "Red Ale", "Stout", "Cider"];
-document.getElementById("material-card");
+
 
 (function($) {
+  materialCard.getElementById("material-card");
   let MaterialCard = function(element, options) {
     this.options = options;
     this.card = $(element);
@@ -36,7 +38,7 @@ document.getElementById("material-card");
 
   };
   
-  document.addEventListener('click', materialCard);
+  materialCard.addEventListener('click', materialCard);
 
   options = {
     icon_close: 'fa-arrow-left',
