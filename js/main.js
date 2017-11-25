@@ -38,7 +38,7 @@ let beerNames = ["IIPA", "Lager", "Porter", "Red Ale", "Stout", "Cider"];
 
   };
   
-  materialCard.addEventListener('click', materialCard);
+  material-card.addEventListener('click');
 
   options = {
     icon_close: 'fa-arrow-left',

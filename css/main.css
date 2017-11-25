@@ -153,37 +153,7 @@
 .material-card .mc-footer a:nth-child(5) {
   transition: all 0.9s;
 }
-a {
-   display: block;
-   float: left;
-   position: relative;
-   width: 52px;
-   height: 52px;
-   margin-left: 5px;
-   margin-bottom: 15px;
-   font-size: 28px;
-   color: #fff;
-   line-height: 52px;
-   text-decoration: none;
-   top: 200px;
-   &:nth-child(1) {
-      .mc-transtition (.5s)
-   }
-   &:nth-child(2) {
-       .mc-transtition (.6s)
-   }
-   &:nth-child(3) {
-        .mc-transtition (.7s)
-   }
-   &:nth-child(4) {
-         .mc-transtition (.8s)
-   }
-   &:nth-child(5) {
-         .mc-transtition (.9s)
-            
-   }
-  } 
- }
+
 .material-card .img-container {
   overflow: hidden;
   position: absolute;
