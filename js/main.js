@@ -1,5 +1,6 @@
-let beers = {redCard:"IIPA", yellowCard:"Lager", amberCard:"Porter", orangeCard:"Red Ale", deepOrangeCard:"Stout", brownCard:"Cider"};
+let beerNames = ["IIPA", "Lager", "Porter", "Red Ale", "Stout", "Cider"];
 document.getElementById("material-card");
+
 (function ($) {
     let MaterialCard = function (element, options) {
         this.options        = options;
