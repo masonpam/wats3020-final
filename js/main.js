@@ -123,7 +123,4 @@ document.getElementById("material-card");
             }
         })
     };
-
-    $.fn.materialCard = Plugin;
-}(jQuery));
-
+});
