@@ -1,3 +1,5 @@
+let beers = {redCard:"IIPA", yellowCard:"Lager", amberCard:"Porter", orangeCard:"Red Ale", deepOrangeCard:"Stout", brownCard:"Cider"};
+document.getElementById("material-card");
 (function ($) {
     let MaterialCard = function (element, options) {
         this.options        = options;
@@ -6,7 +8,7 @@
         this.icon           = $(element).children('.mc-btn-action').children('i');
         this.card_activator = options.card_activator;
         this.timing         = this.getTransitionTiming();
-
+    
         let that = this;
 
         if (that.card_activator == 'click') {
@@ -26,9 +28,10 @@
             });
             this.card.on('mouseleave', function () {
                 that.close();
+                
             });
         }
-
+      
     };
 
     MaterialCard.defaults = {
@@ -103,3 +106,23 @@
         }
         return time * multiplier;
     };
+
+    let Plugin = function (options) {
+        return this.each(function () {
+            let $this    = $(this);
+            let $MCData    = $this.data('material-card');
+            let $options = $.extend({}, MaterialCard.defaults, typeof options == 'object' && options);
+
+            if (!$MCData) {
+                $this.data('material-card', ($MCData = new MaterialCard(this, $options)));
+            }
+
+            if (typeof options == 'string') {
+                $MCData[options]();
+            }
+        })
+    };
+
+    $.fn.materialCard = Plugin;
+}(jQuery));
+
