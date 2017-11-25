@@ -1,7 +1,29 @@
 let beerNames = ["IIPA", "Lager", "Porter", "Red Ale", "Stout", "Cider"];
 document.getElementById("material-card");
-(function() {
-        ('.material-card > .mc-btn-action').click(function () {
+
+(function ($) {
+    let MaterialCard = function (element, options) {
+        this.options        = options;
+        this.card           = $(element);
+        this.button         = $(element).children('.mc-btn-action');
+        this.icon           = $(element).children('.mc-btn-action').children('i');
+        this.card_activator = options.card_activator;
+        this.timing         = this.getTransitionTiming();
+    
+        let that = this;
+
+        if (that.card_activator == 'click') {
+            if (!this.icon.hasClass(this.options.icon_open)) {
+                this.icon.attr('class', this.icon.attr('class').replace(/\bfa-.*\b/g, '')).addClass(this.options.icon_open);
+            }
+            this.button.on('click', function () {
+                that.toggle();
+            });
+        } else {
+            this.button.hide();
+        }
+      $(function() {
+        $('.material-card > .mc-btn-action').click(function () {
             var card = $(this).parent('.material-card');
             var icon = $(this).children('i');
             icon.addClass('fa-spin-fast');
@@ -29,27 +51,6 @@ document.getElementById("material-card");
             }
         });
     });
-(function ($) {
-    let MaterialCard = function (element, options) {
-        this.options        = options;
-        this.card           = $(element);
-        this.button         = $(element).children('.mc-btn-action');
-        this.icon           = $(element).children('.mc-btn-action').children('i');
-        this.card_activator = options.card_activator;
-        this.timing         = this.getTransitionTiming();
-    
-        let that = this;
-
-        if (that.card_activator == 'click') {
-            if (!this.icon.hasClass(this.options.icon_open)) {
-                this.icon.attr('class', this.icon.attr('class').replace(/\bfa-.*\b/g, '')).addClass(this.options.icon_open);
-            }
-            this.button.on('click', function () {
-                that.toggle();
-            });
-        } else {
-            this.button.hide();
-        }
 
         if (that.card_activator == 'hover') {
             this.card.on('mouseenter', function () {
