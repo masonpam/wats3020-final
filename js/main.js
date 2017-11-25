@@ -10,6 +10,7 @@ document.getElementById("material-card");
         this.card_activator = options.card_activator;
         this.timing         = this.getTransitionTiming();
     
+    
         let that = this;
 
         if (that.card_activator == 'click') {
@@ -35,13 +36,19 @@ document.getElementById("material-card");
       
     };
 
-    MaterialCard.defaults = {
+    options = {
         icon_close: 'fa-arrow-left',
         icon_open: 'fa-bars',
         icon_spin: 'fa-spin-fast',
         card_activator: 'click'
     };
-
+  
+    $('.material-card').materialCard('toggle');
+    $('.material-card:eq(1)').materialCard('open');
+    $('.material-card:eq(2)').materialCard('close');
+    if($('.material-card:eq(3)').materialCard('isOpen') === true){
+      
+    }
     MaterialCard.prototype.toggle = function () {
         this.icon.addClass(this.options.icon_spin);
         return this.isOpen() ? this.close() : this.open();
@@ -88,7 +95,5 @@ document.getElementById("material-card");
 
     MaterialCard.prototype.isOpen = function () {
         return this.card.hasClass('mc-active');
-    };
-
-  
+    };  
     });
