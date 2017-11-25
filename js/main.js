@@ -1,6 +1,14 @@
 let beerNames = ["IIPA", "Lager", "Porter", "Red Ale", "Stout", "Cider"];
 document.getElementById("material-card");
-
+(function() {
+        ('.material-card').materialCard({
+            icon_close: 'fa-chevron-left',
+            icon_open: 'fa-thumbs-o-up',
+            icon_spin: 'fa-spin-fast',
+            card_activator: 'click'
+        
+        });}
+  
 (function ($) {
     let MaterialCard = function (element, options) {
         this.options        = options;
