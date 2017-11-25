@@ -1,5 +1,5 @@
 let beerNames = ["IIPA", "Lager", "Porter", "Red Ale", "Stout", "Cider"];
-document.getElementById("material-card");
+document.getElementById("material-card").innerHTML = beerNames;
 
 (function ($) {
     let MaterialCard = function (element, options) {
