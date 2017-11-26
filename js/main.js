@@ -38,14 +38,15 @@ let beerNames = ["IIPA", "Lager", "Porter", "Red Ale", "Stout", "Cider"];
 
   };
   
-  material-card.addEventListener('click');
+  document.addEventListener('click', function(event){
 
   options = {
     icon_close: 'fa-arrow-left',
     icon_open: 'fa-bars',
     icon_spin: 'fa-spin-fast',
     card_activator: 'click'
-  };
+  }
+  });
 
   $('.material-card').materialCard('toggle');
   $('.material-card:eq(1)').materialCard('open');
