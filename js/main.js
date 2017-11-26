@@ -1,14 +1,14 @@
 //Start of beer cards//
-let beerNames = ["IIPA", "Lager", "Porter", "Red Ale", "Stout", "Cider"];
-
 
 (function($) {
-  materialCard.getElementById("material-card");
+  materialCard.getElementById("card");
+  let beerNames = ["IIPA", "Lager", "Porter", "Red Ale", "Stout", "Cider"];
+
   let MaterialCard = function(element, options) {
     this.options = options;
-    this.card = $(element);
-    this.button = $(element).children('.mc-btn-action');
-    this.icon = $(element).children('.mc-btn-action').children('i');
+    this.card = $(card);
+    this.button = $(card).children('.mc-btn-action');
+    this.icon = $(card).children('.mc-btn-action').children('i');
     this.card_activator = options.card_activator;
     this.timing = this.getTransitionTiming();
 
