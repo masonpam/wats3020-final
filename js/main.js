@@ -6,9 +6,9 @@
 
   let MaterialCard = function(element, options) {
     this.options = options;
-    this.card = $(card);
-    this.button = $(card).children('.mc-btn-action');
-    this.icon = $(card).children('.mc-btn-action').children('i');
+    this.card = $(element);
+    this.button = $(element).children('.mc-btn-action');
+    this.icon = $(element).children('.mc-btn-action').children('i');
     this.card_activator = options.card_activator;
     this.timing = this.getTransitionTiming();
 
@@ -48,10 +48,10 @@
   }
   });
 
-  $('.material-card').materialCard('toggle');
-  $('.material-card:eq(1)').materialCard('open');
-  $('.material-card:eq(2)').materialCard('close');
-  if ($('.material-card:eq(3)').materialCard('isOpen') === true) {
+  $('#card').materialCard('toggle');
+  $('#card:eq(1)').materialCard('open');
+  $('#card:eq(2)').materialCard('close');
+  if ($('#card:eq(3)').materialCard('isOpen') === true) {
 
   }
   MaterialCard.prototype.toggle = function() {
