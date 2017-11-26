@@ -38,7 +38,7 @@ let beerNames = ["IIPA", "Lager", "Porter", "Red Ale", "Stout", "Cider"];
 
   };
   
-  document.addEventListener('click', function(event){
+  document.addEventListener('click', function(){
 
   options = {
     icon_close: 'fa-arrow-left',
