@@ -40,7 +40,7 @@
   
   document.addEventListener('click', function(){
 
-  options = {
+  cardFunctions = {
     icon_close: 'fa-arrow-left',
     icon_open: 'fa-bars',
     icon_spin: 'fa-spin-fast',
