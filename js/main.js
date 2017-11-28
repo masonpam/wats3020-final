@@ -38,7 +38,7 @@
 
   };
   
-  document.addEventListener('click', function(){
+  document.addEventListener('DOMContentLoaded', function(){
 
   cardFunctions = {
     icon_close: 'fa-arrow-left',
