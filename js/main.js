@@ -130,4 +130,4 @@ class MaterialCard {
   MaterialCard.prototype.isOpen = function() {
     return this.card.hasClass('mc-active');
   };
-});
+ });
