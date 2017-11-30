@@ -25,7 +25,7 @@ h1 {
 }
 
 .material-card {
-  position: relative;
+  position: fixed;
   height: 0;
   padding-bottom: calc(100% - 16px);
   margin-bottom: 6em;
