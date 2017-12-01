@@ -1,32 +1,18 @@
 //Start of beer cards//
 class MaterialCard {
   constructor (){
-    $(function() {
-        $('.material-card > .mc-btn-action').click(function () {
-            let card = $(this).parent('.material-card');
-            let icon = $(this).children('i');
-            icon.addClass('fa-spin-fast');
-            if (card.hasClass('mc-active')) {
-                card.removeClass('mc-active');
-                window.setTimeout(function() {
-                    icon
-                        .removeClass('fa-arrow-left')
-                        .removeClass('fa-spin-fast')
-                        .addClass('fa-bars');
-                }, 800);
-            } else {
-                card.addClass('mc-active');
-                window.setTimeout(function() {
-                    icon
-                        .removeClass('fa-bars')
-                        .removeClass('fa-spin-fast')
-                        .addClass('fa-arrow-left');
-                }, 800);
-            }
-        });
-    });
+    this.materialCard = cardFunctions
   }
 }
+ document.addEventListener('click', function(event){
+
+  cardFunctions = {
+    icon_close: 'fa-arrow-left',
+    icon_open: 'fa-bars',
+    icon_spin: 'fa-spin-fast',
+    card_activator: 'click'
+  }
+  });
  document.addEventListener('DOMContentLoaded', function(){}
 
 (function($) {
@@ -66,16 +52,6 @@ class MaterialCard {
     }
   
   };
-  
-  document.addEventListener('click', function(event){
-
-  cardFunctions = {
-    icon_close: 'fa-arrow-left',
-    icon_open: 'fa-bars',
-    icon_spin: 'fa-spin-fast',
-    card_activator: 'click'
-  }
-  });
 
   $('#card').materialCard('toggle');
   $('#card:eq(1)').materialCard('open');
