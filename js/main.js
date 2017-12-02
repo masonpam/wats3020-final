@@ -1,4 +1,4 @@
-//Start of beer cards//
+//Start of cards//
 class MaterialCard {
   constructor (){
     this.materialCard = cardFunctions
@@ -13,6 +13,7 @@ class MaterialCard {
     card_activator: 'click'
   }
   });
+
  document.addEventListener('DOMContentLoaded', function(){}
 
 (function($) {
@@ -52,7 +53,8 @@ class MaterialCard {
     }
   
   };
-
+   
+//jquery settings//
   $('#card').materialCard('toggle');
   $('#card:eq(1)').materialCard('open');
   $('#card:eq(2)').materialCard('close');
@@ -64,6 +66,7 @@ class MaterialCard {
     return this.isOpen() ? this.close() : this.open();
   };
 
+   //transition timing functions//
   MaterialCard.prototype.getTransitionTiming = function() {
     let duration = 0;
     this.card.find('*').each(function() {
